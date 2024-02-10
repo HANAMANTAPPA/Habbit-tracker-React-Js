@@ -2,37 +2,219 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+  display: flex;
+  height: 600px;
+}
+.headder {
+  background-color: aqua;
+  margin-bottom: 5px;
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+.headder button {
+  /* margin-right: 5px; */
+  /* height: fit-content; */
+
+  font-size: 15px;
+  padding: 7px 10px;
+  text-shadow: none;
+  border-radius: 3px;
+  border: none;
+  font-weight: 600;
+  background-color: rgb(97, 97, 243);
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* .add-habbit-container {
+  position: absolute;
+  margin-top: 80px;
+  width: 200px;
+  background-color: aquamarine;
+} */
+.sidebar {
+  padding: 2%;
+  width: 300px;
+  height: auto;
+  background-color: rgba(159, 243, 243, 0.467);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  /* border: 5px solid aqua; */
+  box-shadow: 2px 2px 5px 2px lightgray;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.habbit-container {
+  margin: 2%;
+  height: auto;
+  min-width: 80%;
+  background-color: rgba(159, 243, 243, 0.467);
+  border-radius: 15px;
+  /* border: 5px solid aqua; */
+  box-shadow: 2px 2px 5px 2px lightgray;
+  overflow: auto;
+}
+.hbt-container {
+  /* background-color: antiquewhite; */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.habbit {
+  width: 400px;
+  display: flex;
+  padding: 5px;
+  background-color: rgb(60, 246, 246, 0.7);
+  border-radius: 5px;
+  margin: 10px;
+  /* border: 2px solid aqua; */
+  box-shadow: 2px 2px 5px 2px lightgray;
+}
+
+.habbit span {
+  width: 70%;
+  min-width: 260px;
+  max-width: 270px;
+  padding: 5px;
+  /* background-color: rgb(28, 215, 43); */
+  font-size: 15px;
+  font-weight: bold;
+}
+.habbit img {
+  width: 10%;
+  padding: 5px;
+}
+.habbit button {
+  /* width: 10%; */
+  padding: 5px;
+  background-color: red;
+  border-radius: 10px;
+  font-size: 13px;
+  padding: 7px 10px;
+  text-shadow: none;
+  border-radius: 3px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.user-con {
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* gap: 1rem; */
+  /* background-color: rgb(28, 215, 43, 0.10); */
+}
+.user-con img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fcf6f9;
+  border: 2px solid #ffffff;
+  padding: 0.2rem;
+  box-shadow: 0px 1px 17px rgba(0, 0, 0, 0.06);
+}
+.user-con h2 {
+  color: rgba(34, 34, 96, 1);
+}
+.user-con p {
+  color: rgba(34, 34, 96, 0.6);
+}
+.user-con .menu-items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.user-con .menu-items li {
+  display: grid;
+  grid-template-columns: 40px auto;
+  align-items: center;
+  margin: 0.6rem 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  color: rgba(34, 34, 96, 0.6);
+  padding-left: 1rem;
+  position: relative;
+}
+.user-con .menu-items li i {
+  color: rgba(34, 34, 96, 0.6);
+  font-size: 1.4rem;
+  transition: all 0.4s ease-in-out;
+}
+.active {
+  color: rgba(34, 34, 96, 1) !important;
+}
+.active i {
+  color: rgba(34, 34, 96, 1) !important;
 }
 
-.App-link {
-  color: #61dafb;
+.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #222260;
+  border-radius: 0 10px 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Progress component from here */
+
+.outer {
+  padding: 2px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  /* width: 580px; */
+  /* background-color: black; */
+  border: 2px solid black;
+  /* box-shadow: 0, 0, 2px, black; */
+}
+
+.outer .title-box {
+  margin: 10px;
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+  background-color: aqua;
+}
+.title-box span,
+.title-box svg {
+  /* background-color: red; */
+  padding: 2px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.week-boxs-container {
+  display: flex;
+  /* width: 580px; */
+  background-color: aqua;
+}
+
+.week-box {
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  width: 80px;
+  background-color: white;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 15px;
+}
+
+.week-status {
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+  background-color: #ffffff;
+  border-radius: 50%;
 }

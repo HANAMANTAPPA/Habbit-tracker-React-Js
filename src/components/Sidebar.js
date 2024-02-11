@@ -15,6 +15,7 @@ class Sidebar extends React.Component {
     dispatch(toggleTab(boolVal));
   };
   render() {
+    const { dashbordTab } = this.props;
     return (
       <div>
         <div className="user-con">
@@ -24,29 +25,15 @@ class Sidebar extends React.Component {
           <h2>HK</h2>
         </div>
         <div>
-          {/* <ul className="menu-items">
-          {menuItems.map((item) => {
-            return (
-              <li
-                key={item.id}
-                onClick={() => setActive(item.id)}
-                className={active === item.id ? "active" : ""}
-              >
-                {item.icon}
-                <span>{item.title}</span>
-              </li>
-            );
-          })}
-        </ul> */}
           <div>
             <p
-              className="sideBarTexts"
+              className={`sideBarTexts ${dashbordTab ? "active" : ""} `}
               onClick={() => this.handleDashboardTab(true)}
             >
               Dashboard
             </p>
             <p
-              className="sideBarTexts"
+              className={`sideBarTexts ${dashbordTab ? "" : "active"}  `}
               onClick={() => this.handleDashboardTab(false)}
             >
               Show week view

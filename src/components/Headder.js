@@ -1,24 +1,35 @@
 import { connect } from "react-redux";
 import { useState } from "react";
+import { addhabbit } from "../actions";
 
+debugger;
 function Headder(props) {
-  const { inputVal, setInputVal } = useState("zxcz");
-  const { dispatch } = props;
-  console.log(dispatch, "in headder ");
+  const [inputVal, setInputVal] = useState("");
   function handleInput(e) {
-    const text = e.target.value;
-    console.log(text.length);
-    setInputVal(text);
-    // toast("hello", {
-    //   position: toast.position.TOP_CENTER,
-    // });
+    if (e.target === "enter") {
+      addhabbitfun();
+    } else {
+      const text = e.target.value;
+      setInputVal(text);
+    }
   }
   const addhabbitfun = () => {
-    const text = inputVal;
-    console.log(text);
-    // if (text.length === 0) {
-    //   toast("Habit never can be empty ");
-    // }
+    const text = inputVal.trim();
+    if (text.length === 0) {
+      console.log("INPUT can't be empty");
+    } else {
+      const habit = {
+        title: text,
+        fav: false,
+        daylist: [0, 0, 0, 0, 0, 0, 0],
+      };
+
+      const { dispatch } = props;
+      dispatch(addhabbit(habit));
+      setInputVal("");
+      document.getElementById("input").value = "";
+    }
+    return;
   };
   return (
     <div className="headder">
@@ -31,7 +42,7 @@ function Headder(props) {
           alignSelf: "center",
         }}
       >
-        <input type="text" onChange={handleInput} />
+        <input type="text" onChange={handleInput} id="input" />
         <button onClick={addhabbitfun}>Add Habbit</button>
       </div>
     </div>

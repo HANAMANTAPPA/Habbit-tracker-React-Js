@@ -9,12 +9,12 @@ import {
 const initialHabbitsState = {
   habbits: [
     {
-      title: "Read book",
+      title: "Read a book",
       fav: false,
       daylist: [1, 0, -1, 0, 0, 0, 0],
     },
     {
-      title: "write book",
+      title: "Write book",
       fav: false,
       daylist: [0, -1, 0, 0, 1, 1, 0],
     },
@@ -28,6 +28,11 @@ const initialHabbitsState = {
       fav: false,
       daylist: [1, 1, 1, -1, 0, 1, 0],
     },
+    {
+      title: "Cycling",
+      fav: false,
+      daylist: [1, 1, 1, -1, 0, 1, 0],
+    },
   ],
   dashbordTab: true,
 };
@@ -35,7 +40,6 @@ const initialHabbitsState = {
 export function reducer(state = initialHabbitsState, action) {
   switch (action.type) {
     case ADD_HABBIT:
-      console.log(action.type, "action.type)");
       return { ...state, habbits: [...state.habbits, action.habbit] };
     case REMOVE_HABBIT:
       //   const index = state.favlist.indexOf(action.movie);
@@ -44,10 +48,8 @@ export function reducer(state = initialHabbitsState, action) {
       );
       return { ...state, habbits: newHabbitList };
     case TOGGLETAB:
-      console.log(action.type, "action.type)");
       return { ...state, dashbordTab: action.boolVal };
     case MODIFIE_HABBIT:
-      console.log(action.type, "action.type)");
       const newHabbitList2 = state.habbits.map((habbit) => {
         if (habbit.title === action.habbit.title) {
           if (habbit.daylist[index] === 1) {
@@ -60,7 +62,7 @@ export function reducer(state = initialHabbitsState, action) {
         }
         return habbit;
       });
-      console.log(newHabbitList2, "--new list ");
+      // console.log(newHabbitList2, "--new list ");
       return { ...state, habbits: [...newHabbitList2] };
     default:
       return state;

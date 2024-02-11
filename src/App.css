@@ -28,12 +28,12 @@
   cursor: pointer;
 }
 
-/* .add-habbit-container {
-  position: absolute;
-  margin-top: 80px;
-  width: 200px;
-  background-color: aquamarine;
-} */
+/* sideBarTexts */
+.sideBarTexts {
+  color: black;
+  cursor: pointer;
+  text-decoration: underline;
+}
 .sidebar {
   padding: 2%;
   width: 300px;
@@ -44,7 +44,9 @@
   /* border: 5px solid aqua; */
   box-shadow: 2px 2px 5px 2px lightgray;
 }
-
+.sidebar .active {
+  background-color: rgb(153, 150, 236);
+}
 .habbit-container {
   margin: 2%;
   height: auto;
@@ -100,7 +102,9 @@
   font-weight: 600;
   cursor: pointer;
 }
-
+.habbit button:hover {
+  background-color: orange;
+}
 .user-con {
   height: 100px;
   display: flex;
@@ -125,45 +129,6 @@
 .user-con p {
   color: rgba(34, 34, 96, 0.6);
 }
-/* .user-con .menu-items {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.user-con .menu-items li {
-  display: grid;
-  grid-template-columns: 40px auto;
-  align-items: center;
-  margin: 0.6rem 0;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.4s ease-in-out;
-  color: rgba(34, 34, 96, 0.6);
-  padding-left: 1rem;
-  position: relative;
-}
-.user-con .menu-items li i {
-  color: rgba(34, 34, 96, 0.6);
-  font-size: 1.4rem;
-  transition: all 0.4s ease-in-out;
-}
-.active {
-  color: rgba(34, 34, 96, 1) !important;
-}
-.active i {
-  color: rgba(34, 34, 96, 1) !important;
-}
-
-.active::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: #222260;
-  border-radius: 0 10px 10px 0;
-} */
 
 /* Progress component from here */
 
@@ -221,12 +186,4 @@
   width: 50px;
   background-color: #ffffff;
   border-radius: 50%;
-}
-
-/* sideBarTexts */
-
-.sideBarTexts {
-  color: black;
-  cursor: pointer;
-  text-decoration: underline;
 }

@@ -1,3 +1,1 @@
-# Habbit Tracker React App
-
- 
+# Habbit Tracker React and Redux App

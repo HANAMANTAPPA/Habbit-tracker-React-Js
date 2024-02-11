@@ -4,7 +4,7 @@ import { modifyhabbit } from "../../actions";
 
 class Progress extends React.Component {
   componentDidMount() {
-    console.log("hi");
+    console.log("hicomponent moundet");
   }
   componentDidUpdate() {
     console.log("updated");
@@ -13,7 +13,6 @@ class Progress extends React.Component {
     const daysOfWeek = ["MON", "TUES", "WED", "THU", "FRI", "SAT", "SUN"];
     // let color = 0;
     const { habit, dispatch } = this.props;
-    // console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", this.props);
     const toggleStatus = (index, habit) => {
       if (habit.daylist[index] === 1) {
         habit.daylist[index] = -1;
@@ -23,7 +22,6 @@ class Progress extends React.Component {
         habit.daylist[index] = 1;
       }
       dispatch(modifyhabbit(habit, index));
-      // console.log(index, habit.title, habit.daylist);
       this.forceUpdate();
     };
     return (

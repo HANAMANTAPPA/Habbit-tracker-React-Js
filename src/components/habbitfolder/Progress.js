@@ -1,16 +1,39 @@
 import React from "react";
+import { connect } from "react-redux";
+import { modifyhabbit } from "../../actions";
 
-export default class Progress extends React.Component {
+class Progress extends React.Component {
+  componentDidMount() {
+    console.log("hi");
+  }
+  componentDidUpdate() {
+    console.log("updated");
+  }
   render() {
     const daysOfWeek = ["MON", "TUES", "WED", "THU", "FRI", "SAT", "SUN"];
     // let color = 0;
-    const { habit } = this.props;
-    console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", this.prop);
+    const { habit, dispatch } = this.props;
+    // console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", this.props);
+    const toggleStatus = (index, habit) => {
+      if (habit.daylist[index] === 1) {
+        habit.daylist[index] = -1;
+      } else if (habit.daylist[index] === -1) {
+        habit.daylist[index] = 0;
+      } else {
+        habit.daylist[index] = 1;
+      }
+      dispatch(modifyhabbit(habit, index));
+      // console.log(index, habit.title, habit.daylist);
+      this.forceUpdate();
+    };
     return (
       <div className="outer">
         <div className="title-box">
           <span>
             <b>{habit.title}</b>
+            <span>
+              {habit.daylist.filter((dayStatus) => dayStatus === 1).length}/7
+            </span>
           </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +46,11 @@ export default class Progress extends React.Component {
         <div className="week-boxs-container">
           {daysOfWeek.map((day, index) => {
             return (
-              <div className="week-box" key={`day${index}`}>
+              <div
+                className="week-box"
+                key={`day${index}`}
+                onClick={() => toggleStatus(index, habit)}
+              >
                 <div className="weeks">
                   <span>{day}</span>
                 </div>
@@ -46,3 +73,10 @@ export default class Progress extends React.Component {
     );
   }
 }
+
+//
+function callback(state) {
+  return {};
+}
+const connectedComponent = connect(callback)(Progress);
+export default connectedComponent;

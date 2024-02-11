@@ -125,7 +125,7 @@
 .user-con p {
   color: rgba(34, 34, 96, 0.6);
 }
-.user-con .menu-items {
+/* .user-con .menu-items {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -163,7 +163,7 @@
   height: 100%;
   background: #222260;
   border-radius: 0 10px 10px 0;
-}
+} */
 
 /* Progress component from here */
 
@@ -209,12 +209,24 @@
   /* justify-content: center; */
   align-items: center;
   margin: 15px;
+  cursor: pointer;
 }
-
+.week-box :hover {
+  transform: scale(1.15);
+  transition: ease-in-out;
+}
 .week-status {
   margin: 10px;
   height: 50px;
   width: 50px;
   background-color: #ffffff;
   border-radius: 50%;
+}
+
+/* sideBarTexts */
+
+.sideBarTexts {
+  color: black;
+  cursor: pointer;
+  text-decoration: underline;
 }

@@ -4,15 +4,16 @@ import Headder from "./components/Headder";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import React from "react";
+import { connect } from "react-redux";
 
 class App extends React.Component {
   componentDidMount() {
-    const { store } = this.props;
+    // const { store } = this.props;
 
-    store.subscribe(() => {
-      console.log("UPDATED");
-      // this.forceUpdate();
-    });
+    // store.subscribe(() => {
+    //   console.log("UPDATED");
+    //   // this.forceUpdate();
+    // });
     /// make Api call
     // dispatch app
     // const habbits = {
@@ -24,14 +25,16 @@ class App extends React.Component {
     //   type: "ADD_HABBIT",
     //   habbits: habbits,
     // });
-    console.log(this.props.store.getState(), "in App");
+    console.log(this.props, "in App");
   }
 
   // console.log(props.getState());
-  print = () => {};
   render() {
-    const { habbits } = this.props.store.getState();
+    // const { habbits } = this.props.store.getState();
     // const habbits = store.habbits;
+
+    const { habbits } = this.props;
+    console.log(habbits, "in app");
     return (
       <div className="App">
         {/* <h1>Hi</h1> */}
@@ -43,7 +46,10 @@ class App extends React.Component {
           </div>{" "}
           <div className="habbit-container">
             <h1>All ur habbits</h1>
-            <Habbitcontainer habbits={habbits} />
+            <Habbitcontainer
+            // habbits={habbits}
+            // dispatch={this.props.store.dispatch}
+            />
           </div>
         </div>
         <Footer />
@@ -52,4 +58,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+function callback(state) {
+  return {
+    habbits: state.habbits,
+  };
+}
+const connectedComponent = connect(callback)(App);
+export default connectedComponent;

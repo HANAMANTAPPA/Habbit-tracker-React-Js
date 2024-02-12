@@ -28,7 +28,7 @@ https://habbit-tracker-react-js.vercel.app/
    - Toggle status of days in a week 
    -  
 ## Data
-    * store of following data
+   * store of following data
        - Habbits  - an array of object {title , fav, dayList }
            - dayList - of an array 
        - dashbordTab - boolean

@@ -19,7 +19,7 @@ https://habbit-tracker-react-js.vercel.app/
 ## 2nd Part - Functionality (In scope)
    - Add a habit
    - Delete a habit
-   - Toggle task Dashboard and Week view 
+   - Toggle between Dashboard tab and WeekView tab 
    - number of days completed out of 7 days  
 ## Functions (In scope)
    - addHabit
@@ -28,7 +28,7 @@ https://habbit-tracker-react-js.vercel.app/
    - Toggle status of days in a week 
    -  
 ## Data
-    *  store of following data
+    * store of following data
        - Habbits  - an array of object {title , fav, dayList }
            - dayList - of an array 
        - dashbordTab - boolean
